@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/default.css">
+</head>
+<body>
+	<h1>[ 게시판 리스트 ]</h1>
+	<p>
+		<input type="button" onclick="location.href='/board/writeForm'"
+			value="게시글 작성">
+	</p>
+
+	<table>
+		<tr>
+			<th>NO</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+			<th>작성일</th>
+		</tr>
+		<tr th:each="board, boardStat : ${boards}">
+			<td th:text="${boardStat.count}"></td>
+			<td><a
+				th:href="@{/board/readForm/{board_id}(board_id=${board.board_id})}"
+				th:text="${board.title}"></a></td>
+			<td th:text="${board.id}"></td>
+			<td th:text="${board.hit}"></td>
+			<td th:text="${board.input_date}"></td>
+		</tr>
+	</table>
+</body>
+</html>

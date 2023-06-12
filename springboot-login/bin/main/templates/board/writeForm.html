@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/default.css">
+</head>
+<body>
+	<h1>[ 게시글 작성 ]</h1>
+	<form action="/board/write" method="post">
+		<table>
+			<tr>
+				<th>제목</th>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><textarea name="content" cols="60" rows="30"></textarea></td>
+			</tr>
+		</table>
+		<input type="button" onclick="location.href='/board/list'"
+			value="목록으로"> <input type="submit" value="등록하기"> <input
+			type="reset" value="취소">
+	</form>
+</body>
+</html>

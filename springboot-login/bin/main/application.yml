@@ -1,0 +1,18 @@
+server:
+  port: 9000
+  servlet:
+    session:
+      tracking-modes:
+      - cookie
+  
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    username: board
+    password: 1234
+    
+mybatis:
+  mapper-locations:
+  - mapper/**/*.xml
+  type-aliases-package: com.example.login.model
